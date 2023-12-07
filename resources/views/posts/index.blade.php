@@ -20,7 +20,7 @@
                         <td>{{$post->updated_at}}</td>
                         <td>
                             <div class="join">
-                                <button class="btn btn-info join-item">View</button>
+                                <a href="{{route('posts.view', ['post' => $post])}}" class="btn btn-info join-item">View</a>
                                 <a href="{{route('posts.edit', ['post' => $post])}}" class="btn btn-warning join-item">Edit</a>
                                 <form action="{{route('posts.destroy', ['post' => $post])}}" method="POST">
                                     @csrf

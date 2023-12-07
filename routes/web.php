@@ -23,7 +23,7 @@ Route::get('/', [PublicController::class, 'index'])->name('home');
 // Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 // Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 // Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-
+Route::get('/admin/posts/{post}/view', [PostController::class, 'view'])->name('posts.view');
 Route::resource('/admin/posts', PostController::class);
 
 
