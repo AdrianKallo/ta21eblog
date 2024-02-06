@@ -2,6 +2,7 @@
 @section('title', 'Home page')
 @section('content')
     <div class="container mx-auto">
+        {{$posts->links()}}
         <div class="flex flex-row flex-wrap">
             @foreach($posts as $post)
                 <div class="basis-1/4 my-2">
@@ -11,6 +12,7 @@
                                 <img src="{{$post->images->first()->path}}" alt="{{$post->title}}" />
                             </figure>
                         @elseif($post->images->count() > 1)
+
                         <div class="carousel rounded-box">
                             @foreach ($post->images as $image)
                                 <div class="carousel-item w-full">
@@ -24,8 +26,9 @@
                             <p>{{ $post->snippet }}</p>
                             <p class="text-gray-400">{{$post->user->name}}</p>
                             <p class="text-gray-400">{{$post->created_at->diffForHumans()}}</p>
+                            <p class="text-gray-400"><b>Comments:</b> {{$post->comments()->count()}}</p>
                             <div class="card-actions justify-end">
-                                <button class="btn btn-primary">Buy Now</button>
+                                <a href="{{route('post', ['post' => $post])}}" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     </div>
