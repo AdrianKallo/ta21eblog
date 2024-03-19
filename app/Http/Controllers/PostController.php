@@ -17,6 +17,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->paginate();
+        if(request()->watsJson()){
+            return $posts;
+        }
         return view('posts.index', compact('posts'));
     }
 
