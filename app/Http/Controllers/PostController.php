@@ -16,8 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate();
-        if(request()->watsJson()){
+        $posts = Post::with('images')->latest()->paginate();
+        if(request()->wantJson()){
             return $posts;
         }
         return view('posts.index', compact('posts'));
@@ -53,9 +53,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function view(Post $post)
     {
-        //
+        return view('posts.view', compact('post'));
     }
 
     /**
@@ -71,7 +71,6 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-
         $post->fill($request->validated());
         // $post->title = $request->input('title');
         // $post->body = $request->input('body');
