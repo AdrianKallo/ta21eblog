@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Like;
-use App\Http\Requests\StoreLikeRequest;
-use App\Http\Requests\UpdateLikeRequest;
+use App\Models\Follow;
+use App\Http\Requests\StoreFollowRequest;
+use App\Http\Requests\UpdateFollowRequest;
 
-class LikeController extends Controller
+class FollowController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class LikeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLikeRequest $request)
+    public function store(StoreFollowRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class LikeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Like $like)
+    public function show(Follow $follow)
     {
         //
     }
@@ -43,7 +43,7 @@ class LikeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Like $like)
+    public function edit(Follow $follow)
     {
         //
     }
@@ -51,7 +51,7 @@ class LikeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLikeRequest $request, Like $like)
+    public function update(UpdateFollowRequest $request, Follow $follow)
     {
         //
     }
@@ -59,7 +59,7 @@ class LikeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Like $like)
+    public function destroy(Follow $follow)
     {
         //
     }

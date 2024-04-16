@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
+use App\Models\Like;
 use App\Models\User;
-use App\Models\like;
 use Illuminate\Auth\Access\Response;
 
 class LikePolicy
@@ -19,7 +19,7 @@ class LikePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, like $like): bool
+    public function view(User $user, Like $like): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class LikePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, like $like): bool
+    public function update(User $user, Like $like): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class LikePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, like $like): bool
+    public function delete(User $user, Like $like): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class LikePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, like $like): bool
+    public function restore(User $user, Like $like): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class LikePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, like $like): bool
+    public function forceDelete(User $user, Like $like): bool
     {
         //
     }
